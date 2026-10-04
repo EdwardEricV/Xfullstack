@@ -6,6 +6,7 @@ from pathlib import Path
 from datetime import timedelta
 import dj_database_url
 import os
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,6 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ============================================================
 # SECURITY
 # ============================================================
+
+load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.environ.get(
     "DJANGO_SECRET_KEY"
@@ -23,7 +26,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "SEU_USUARIO.pythonanywhere.com",
+    "EdwardEric.pythonanywhere.com",
 ]
 
 
