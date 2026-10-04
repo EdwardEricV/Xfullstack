@@ -16,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Autenticação */}
+        <Route path="/" element={<Navigate to="/signin" replace />} />
         <Route path="/signin" element={<LoginPage />} />
         <Route path="/signup" element={<RegisterPage />} />
 
@@ -43,7 +44,7 @@ function App() {
         <Route path="/users/search" element={<SearchUserPage />} />
 
         {/* Rota padrão */}
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/signin" replace />} />
       </Routes>
     </BrowserRouter>
   );
