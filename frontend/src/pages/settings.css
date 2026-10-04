@@ -1,0 +1,598 @@
+/* =====================================
+   PAGE
+===================================== */
+
+.settings-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(37, 99, 235, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 95%,
+      rgba(124, 58, 237, 0.10),
+      transparent 32%
+    ),
+    #050507;
+
+  color: #e7e9ea;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.settings-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 350px;
+
+  overflow: hidden;
+
+  background: rgba(5, 5, 7, 0.72);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+
+/* =====================================
+   LEFT SIDEBAR
+===================================== */
+
+.settings-sidebar {
+  height: 100vh;
+
+  padding: 12px 14px;
+
+  position: sticky;
+  top: 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(10, 10, 13, 0.72);
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.settings-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2px 0 18px 4px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.settings-logo:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: scale(1.04);
+}
+
+.settings-logo svg {
+  width: 30px;
+  height: 30px;
+
+  fill: #ffffff;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.settings-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.settings-nav-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 12px 15px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #e7e9ea;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.settings-nav-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.settings-nav-button:active {
+  transform: scale(0.98);
+}
+
+.settings-nav-button svg {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  fill: #e7e9ea;
+}
+
+
+/* =====================================
+   ACTIVE SETTINGS
+===================================== */
+
+.settings-nav-button-active {
+  background: rgba(37, 99, 235, 0.10);
+
+  color: #ffffff;
+}
+
+.settings-nav-button-active svg {
+  fill: #60a5fa;
+}
+
+
+/* =====================================
+   CENTER
+===================================== */
+
+.settings-main {
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+
+  background: rgba(5, 5, 7, 0.4);
+}
+
+.settings-main::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.settings-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(5, 5, 7, 0.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.settings-header h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =====================================
+   SETTINGS CONTENT
+===================================== */
+
+.settings-content {
+  padding: 20px;
+}
+
+
+/* =====================================
+   SETTINGS CARD
+===================================== */
+
+.settings-card {
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  background: rgba(18, 18, 22, 0.72);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+
+/* =====================================
+   SETTING OPTION
+===================================== */
+
+.settings-option {
+  width: 100%;
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: transparent;
+
+  color: #e7e9ea;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    padding 0.2s ease;
+}
+
+.settings-option:last-child {
+  border-bottom: none;
+}
+
+.settings-option:hover {
+  background: rgba(255, 255, 255, 0.04);
+
+  padding-left: 24px;
+}
+
+
+/* =====================================
+   OPTION TEXT
+===================================== */
+
+.settings-option-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.settings-option-title {
+  color: #e7e9ea;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.settings-option-description {
+  color: #71717a;
+
+  font-size: 12px;
+}
+
+
+/* =====================================
+   DANGER
+===================================== */
+
+.settings-option-danger {
+  color: #f87171;
+}
+
+.settings-option-danger .settings-option-title {
+  color: #f87171;
+}
+
+.settings-option-danger:hover {
+  background: rgba(239, 68, 68, 0.07);
+}
+
+
+/* =====================================
+   ARROW
+===================================== */
+
+.settings-option-arrow {
+  color: #52525b;
+
+  font-size: 18px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.settings-option:hover .settings-option-arrow {
+  color: #a1a1aa;
+
+  transform: translateX(3px);
+}
+
+
+/* =====================================
+   RIGHT SIDEBAR
+===================================== */
+
+.settings-right {
+  height: 100vh;
+
+  padding: 12px 18px;
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.settings-right::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.settings-search {
+  position: relative;
+
+  width: 100%;
+}
+
+.settings-search-input {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 17px;
+
+  border: 1px solid #2a2a2f;
+
+  border-radius: 999px;
+
+  outline: none;
+
+  background: #101012;
+
+  color: white;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.settings-search-input::placeholder {
+  color: #71717a;
+}
+
+.settings-search-input:hover {
+  border-color: #3a3a42;
+}
+
+.settings-search-input:focus {
+  border-color: #2563eb;
+
+  background: #131316;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =====================================
+   SEARCH MENU
+===================================== */
+
+.settings-search-menu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  left: 0;
+  right: 0;
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 15px;
+
+  background: rgba(18, 18, 22, 0.96);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.settings-search-option {
+  padding: 11px 12px;
+
+  border-radius: 10px;
+
+  color: #d4d4d8;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.settings-search-option:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* =====================================
+   TRENDING
+===================================== */
+
+.settings-trending {
+  margin-top: 18px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  background: rgba(18, 18, 22, 0.72);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.settings-trending h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 1100px) {
+  .settings-container {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .settings-right {
+    display: none;
+  }
+
+  .settings-nav-button {
+    width: 50px;
+    height: 50px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .settings-nav-button span {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .settings-container {
+    display: block;
+  }
+
+  .settings-sidebar {
+    display: none;
+  }
+
+  .settings-main {
+    width: 100%;
+  }
+
+  .settings-content {
+    padding: 12px;
+  }
+
+  .settings-header {
+    padding: 0 15px;
+  }
+
+  .settings-card {
+    border-radius: 15px;
+  }
+
+  .settings-option {
+    min-height: 65px;
+
+    padding: 0 15px;
+  }
+}

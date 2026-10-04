@@ -1,0 +1,529 @@
+/* =====================================
+   PAGE
+===================================== */
+
+.followers-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(37, 99, 235, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 95%,
+      rgba(124, 58, 237, 0.10),
+      transparent 32%
+    ),
+    #050507;
+
+  color: #e7e9ea;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.followers-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns:
+    250px
+    minmax(0, 1fr)
+    350px;
+
+  overflow: hidden;
+
+  background: rgba(5, 5, 7, 0.72);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+
+/* =====================================
+   LEFT SIDEBAR
+===================================== */
+
+.followers-sidebar {
+  height: 100vh;
+
+  padding: 12px 14px;
+
+  position: sticky;
+  top: 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(10, 10, 13, 0.72);
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.followers-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2px 0 18px 4px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.followers-logo:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: scale(1.04);
+}
+
+.followers-logo svg {
+  width: 30px;
+  height: 30px;
+
+  fill: #ffffff;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.followers-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.followers-nav-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 12px 15px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #e7e9ea;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.followers-nav-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.followers-nav-button:active {
+  transform: scale(0.98);
+}
+
+.followers-nav-button svg {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  fill: #e7e9ea;
+}
+
+
+/* =====================================
+   CENTER
+===================================== */
+
+.followers-main {
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+
+  background: rgba(5, 5, 7, 0.4);
+}
+
+.followers-main::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================
+   PROFILE HEADER
+===================================== */
+
+.followers-profile-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  min-height: 66px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(5, 5, 7, 0.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================
+   BACK BUTTON
+===================================== */
+
+.followers-back {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 7px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.followers-back:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.followers-back svg {
+  width: 25px;
+  height: 25px;
+
+  fill: #e7e9ea;
+}
+
+
+/* =====================================
+   PROFILE INFO
+===================================== */
+
+.followers-profile-info {
+  min-width: 0;
+
+  margin-left: 8px;
+}
+
+.followers-profile-name {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.followers-profile-username {
+  margin: 4px 0 0;
+
+  color: #71717a;
+
+  font-size: 13px;
+
+  line-height: 1;
+}
+
+
+/* =====================================
+   TABS
+===================================== */
+
+.followers-tabs {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.followers-tab {
+  position: relative;
+
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #71717a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.followers-tab:hover {
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #e7e9ea;
+}
+
+.followers-tab-active {
+  color: #ffffff;
+}
+
+.followers-tab-active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 58px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  border-radius: 999px;
+
+  background: #2563eb;
+}
+
+
+/* =====================================
+   USER LIST
+===================================== */
+
+.followers-list {
+  width: 100%;
+}
+
+
+/* =====================================
+   RIGHT SIDEBAR
+===================================== */
+
+.followers-right {
+  height: 100vh;
+
+  padding: 12px 18px;
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.followers-right::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.followers-search {
+  position: relative;
+
+  width: 100%;
+}
+
+.followers-search-input {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 17px;
+
+  border: 1px solid #2a2a2f;
+
+  border-radius: 999px;
+
+  outline: none;
+
+  background: #101012;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.followers-search-input::placeholder {
+  color: #71717a;
+}
+
+.followers-search-input:hover {
+  border-color: #3a3a42;
+}
+
+.followers-search-input:focus {
+  border-color: #2563eb;
+
+  background: #131316;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =====================================
+   WHAT'S HAPPENING
+===================================== */
+
+.followers-trending {
+  margin-top: 18px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  background: rgba(18, 18, 22, 0.72);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.followers-trending h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 1100px) {
+  .followers-container {
+    grid-template-columns:
+      80px
+      minmax(0, 1fr);
+  }
+
+  .followers-right {
+    display: none;
+  }
+
+  .followers-nav-button {
+    width: 50px;
+    height: 50px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .followers-nav-button span {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .followers-container {
+    display: block;
+  }
+
+  .followers-sidebar {
+    display: none;
+  }
+
+  .followers-main {
+    width: 100%;
+  }
+
+  .followers-profile-header {
+    min-height: 60px;
+  }
+
+  .followers-profile-name {
+    font-size: 16px;
+  }
+
+  .followers-user-list {
+    width: 100%;
+  }
+}

@@ -1,0 +1,690 @@
+/* =====================================
+   PAGE
+===================================== */
+
+.following-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(37, 99, 235, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 95%,
+      rgba(124, 58, 237, 0.10),
+      transparent 32%
+    ),
+    #050507;
+
+  color: #e7e9ea;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.following-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns:
+    250px
+    minmax(0, 1fr)
+    350px;
+
+  overflow: hidden;
+
+  background: rgba(5, 5, 7, 0.72);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+
+/* =====================================
+   LEFT SIDEBAR
+===================================== */
+
+.following-sidebar {
+  height: 100vh;
+
+  padding: 12px 14px;
+
+  position: sticky;
+  top: 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(10, 10, 13, 0.72);
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.following-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2px 0 18px 4px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.following-logo:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: scale(1.04);
+}
+
+.following-logo svg {
+  width: 30px;
+  height: 30px;
+
+  fill: #ffffff;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.following-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.following-nav-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 12px 15px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #e7e9ea;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.following-nav-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.following-nav-button:active {
+  transform: scale(0.98);
+}
+
+.following-nav-button svg {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  fill: #e7e9ea;
+}
+
+
+/* =====================================
+   CENTER
+===================================== */
+
+.following-main {
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+
+  background: rgba(5, 5, 7, 0.4);
+}
+
+.following-main::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================
+   PROFILE HEADER
+===================================== */
+
+.following-profile-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  min-height: 66px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(5, 5, 7, 0.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================
+   BACK BUTTON
+===================================== */
+
+.following-back {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 7px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.following-back:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.following-back svg {
+  width: 25px;
+  height: 25px;
+
+  fill: #e7e9ea;
+}
+
+
+/* =====================================
+   PROFILE NAME
+===================================== */
+
+.following-profile-info {
+  min-width: 0;
+
+  margin-left: 8px;
+}
+
+.following-profile-name {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.following-profile-username {
+  margin: 4px 0 0;
+
+  color: #71717a;
+
+  font-size: 13px;
+
+  line-height: 1;
+}
+
+
+/* =====================================
+   TABS
+===================================== */
+
+.following-tabs {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.following-tab {
+  position: relative;
+
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #71717a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.following-tab:hover {
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #e7e9ea;
+}
+
+.following-tab-active {
+  color: #ffffff;
+}
+
+.following-tab-active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 58px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  border-radius: 999px;
+
+  background: #2563eb;
+}
+
+
+/* =====================================
+   USER LIST
+===================================== */
+
+.following-list {
+  width: 100%;
+}
+
+
+/* =====================================
+   USER CARD
+===================================== */
+
+.following-user {
+  display: flex;
+
+  gap: 13px;
+
+  padding: 17px 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(5, 5, 7, 0.35);
+
+  transition: background 0.2s ease;
+}
+
+.following-user:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =====================================
+   AVATAR
+===================================== */
+
+.following-avatar {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background: #18181b;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================
+   USER CONTENT
+===================================== */
+
+.following-user-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.following-user-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.following-user-name {
+  margin: 0;
+
+  color: #e7e9ea;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.following-user-username {
+  color: #71717a;
+
+  font-size: 14px;
+}
+
+.following-user-bio {
+  margin: 5px 0 0;
+
+  color: #a1a1aa;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =====================================
+   FOLLOW BUTTON
+===================================== */
+
+.following-button {
+  flex-shrink: 0;
+
+  align-self: flex-start;
+
+  min-width: 88px;
+  height: 34px;
+
+  padding: 0 15px;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* FOLLOW */
+
+.following-button-follow {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+}
+
+.following-button-follow:hover {
+  background: #3b82f6;
+}
+
+
+/* UNFOLLOW */
+
+.following-button-unfollow {
+  border: 1px solid #3f3f46;
+
+  background: transparent;
+
+  color: #e7e9ea;
+}
+
+.following-button-unfollow:hover {
+  border-color: #ef4444;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #f87171;
+}
+
+
+/* =====================================
+   RIGHT SIDEBAR
+===================================== */
+
+.following-right {
+  height: 100vh;
+
+  padding: 12px 18px;
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.following-right::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.following-search {
+  position: relative;
+
+  width: 100%;
+}
+
+.following-search-input {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 17px;
+
+  border: 1px solid #2a2a2f;
+
+  border-radius: 999px;
+
+  outline: none;
+
+  background: #101012;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.following-search-input::placeholder {
+  color: #71717a;
+}
+
+.following-search-input:hover {
+  border-color: #3a3a42;
+}
+
+.following-search-input:focus {
+  border-color: #2563eb;
+
+  background: #131316;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =====================================
+   WHAT'S HAPPENING
+===================================== */
+
+.following-trending {
+  margin-top: 18px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  background: rgba(18, 18, 22, 0.72);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.following-trending h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 1100px) {
+  .following-container {
+    grid-template-columns:
+      80px
+      minmax(0, 1fr);
+  }
+
+  .following-right {
+    display: none;
+  }
+
+  .following-nav-button {
+    width: 50px;
+    height: 50px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .following-nav-button span {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .following-container {
+    display: block;
+  }
+
+  .following-sidebar {
+    display: none;
+  }
+
+  .following-main {
+    width: 100%;
+  }
+
+  .following-profile-header {
+    min-height: 60px;
+  }
+
+  .following-user {
+    padding: 14px 12px;
+  }
+
+  .following-user-bio {
+    font-size: 12px;
+  }
+
+  .following-button {
+    min-width: 76px;
+
+    padding: 0 11px;
+  }
+}
