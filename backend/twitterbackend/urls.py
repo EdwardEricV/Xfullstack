@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
-from rest_framework_simplejwt.views import TokenRefreshView
-from users.views import CustomTokenObtainPairView
+from users.views import CustomTokenObtainPairView, CustomTokenRefreshView
 from django.views.static import serve
 from django.urls import re_path
 
@@ -21,7 +20,7 @@ urlpatterns = [
     ),
     path(
         "api/token/refresh/",
-        TokenRefreshView.as_view(),
+        CustomTokenRefreshView.as_view(),
         name="token_refresh",
     ),
 
